@@ -148,4 +148,43 @@
     \end{columns}
 \end{frame}
 
+\subsection{Merges and Collaborative Work}
+\begin{frame}
+    \frametitle{Merges and Collaborative Work}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}[<+->]
+                \item From where we were before...
+                \item Save it, throw it on a USB, give it to a friend
+                \item \textbf{We} write ``dolor sit amet'' at the \textbf{end} of the document
+                \item \textbf{They} write ``git is cool'' at the \textbf{top} of the document
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \resizebox{\textwidth}{!}{
+                \begin{tikzpicture}
+                    \only<1->{
+                        \node[circle, draw, minimum size=1cm] (A) at (0,0) {Hello};
+                        \node[circle, draw, minimum size=1cm] (B) at (0,-2) {World};
+                        \draw[->] (A) -- (B);
+                        \node[gray, dashed, circle, draw, minimum size=1cm] (C) at (0,-4) {Filler Text};
+                        \draw[gray, dashed, ->] (B) -- (C);
+                        \node[circle, draw, minimum size=1cm] (D) at (3,-4) {Lorem Ipsum};
+                        \draw[->] (B) -- (D);
+                    }
+                    \only<3->{
+                        \node[blue, circle, draw, minimum size=1cm] (E) at (3,-6) {dolor sit amet};
+                        \draw[blue, ->] (D) -- (E);
+                    }
+                    \only<4->{
+                        \node[green, circle, draw, minimum size=1cm] (F) at (6,-6) {git is cool};
+                        \draw[green, ->] (D) -- (F);
+                    }
+                \end{tikzpicture}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
 \end{document}
