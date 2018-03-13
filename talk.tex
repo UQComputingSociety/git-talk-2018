@@ -1,14 +1,58 @@
 \documentclass{beamer}
+\usetheme{Boadilla}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes}
 
 \title{Git Gud}
 \author{Neil Ashford}
 \institute{UQ Computing Society}
-\date{Date TBD}
+\date{2018-04-23T17:30+10:00}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
 
 \begin{document}
 
 \begin{frame}
 \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\subsection{Who am I}
+\begin{frame}
+    \frametitle{Who am I}
+    \begin{itemize}[<+->]
+        \item Neil Ashford
+        \item 4th year Software\only<2->{\footnote{ish}} Engineering
+        \item Committee member
+        \item \texttt{@artemis} on slack, \url{ashfordneil0@gmail.com}
+    \end{itemize}
+\end{frame}
+
+\subsection{What is this talk}
+\begin{frame}
+    \frametitle{What is this talk}
+    Target Audience
+    \pause
+    \begin{itemize}[<+->]
+        \item People who have never used version control.
+        \item People who have ``memorised 5 shell commands and trust them implicitly without understanding''
+    \end{itemize}
+    \pause
+    What I'll Cover
+    \begin{itemize}[<+->]
+        \item Some really basic version control you're familiar with, and its flaws.
+        \item The pieces of a mental model of proper version control.
+        \item How git represents each of those pieces to you.
+        \item Flaws with git, and alternatives.
+    \end{itemize}
 \end{frame}
 
 \end{document}
