@@ -71,7 +71,6 @@
 \begin{frame}
     \frametitle{Undo / Reverts}
 
-    \centering
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \begin{itemize}[<+->]
@@ -104,7 +103,49 @@
             \end{tikzpicture}
         \end{column}
     \end{columns}
+\end{frame}
 
+\subsection{Branches}
+\begin{frame}
+    \frametitle{Branches}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}[<+->]
+                \item From where we were before...
+                \item Type ``Lorem Ipsum''
+                \item Realise we want ``Filler Text'' back
+                \item Press Undo
+                \item Press Redo
+                \item Weep
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}
+                \only<1->{
+                    \node[circle, draw, minimum size=1cm] (A) at (0,0) {Hello};
+                    \node[circle, draw, minimum size=1cm] (B) at (0,-2) {World};
+                    \draw[->] (A) -- (B);
+                }
+                \only<1>{
+                    \node[gray, dashed, circle, draw, minimum size=1cm] (C) at (0,-4) {Filler Text};
+                    \draw[gray, dashed, ->] (B) -- (C);
+                }
+                \only<2->{
+                    \node[red, dashed, circle, draw, minimum size=1cm] (C) at (0,-4) {Filler Text};
+                    \draw[red, dashed, ->] (B) -- (C);
+                }
+                \only<2,3,5->{
+                    \node[circle, draw, minimum size=1cm] (D) at (3,-4) {Lorem Ipsum};
+                    \draw[->] (B) -- (D);
+                }
+                \only<4>{
+                    \node[gray, dashed, circle, draw, minimum size=1cm] (D) at (3,-4) {Lorem Ipsum};
+                    \draw[gray, dashed, ->] (B) -- (D);
+                }
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \end{document}
