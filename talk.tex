@@ -159,6 +159,7 @@
                 \item Save it, throw it on a USB, give it to a friend
                 \item \textbf{We} write ``dolor sit amet'' at the \textbf{end} of the document
                 \item \textbf{They} write ``git is cool'' at the \textbf{top} of the document
+                \item How to combine these?
             \end{itemize}
         \end{column}
         \begin{column}{0.5\textwidth}
@@ -174,15 +175,82 @@
                         \draw[->] (B) -- (D);
                     }
                     \only<3->{
-                        \node[blue, circle, draw, minimum size=1cm] (E) at (3,-6) {dolor sit amet};
+                        \node[blue, circle, draw, minimum size=1cm] (E) at (3,-7) {dolor sit amet};
                         \draw[blue, ->] (D) -- (E);
                     }
                     \only<4->{
                         \node[green, circle, draw, minimum size=1cm] (F) at (6,-6) {git is cool};
                         \draw[green, ->] (D) -- (F);
                     }
+                    \only<5>{
+                        \node[circle, draw, minimum size=1cm] (G) at (4.5, -9) {merge};
+                        \draw[->] (E) -- (G);
+                        \draw[->] (F) -- (G);
+                    }
                 \end{tikzpicture}
             }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{A Git Mental Model}
+
+\subsection{Differences Between Our Live Demo and Git}
+\begin{frame}
+    \frametitle{Differences Between Our Live Demo and Git}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}[<+->]
+                \item Microsoft Word can't do all of these things
+                \item (Git can)
+                \item Undo and Redo track really small changes in a single file
+                \item Git tracks larger changes, in a directory (hereafter, repository)
+                \item ...and more
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \resizebox{\textwidth}{!}{
+                \begin{tikzpicture}
+                    \node[circle, draw, minimum size=1cm] (A) at (0,0) {Hello};
+                    \node[circle, draw, minimum size=1cm] (B) at (0,-2) {World};
+                    \draw[->] (A) -- (B);
+                    \node[gray, dashed, circle, draw, minimum size=1cm] (C) at (0,-4) {Filler Text};
+                    \draw[gray, dashed, ->] (B) -- (C);
+                    \node[circle, draw, minimum size=1cm] (D) at (3,-4) {Lorem Ipsum};
+                    \draw[->] (B) -- (D);
+                    \node[blue, circle, draw, minimum size=1cm] (E) at (3,-7) {dolor sit amet};
+                    \draw[blue, ->] (D) -- (E);
+                    \node[green, circle, draw, minimum size=1cm] (F) at (6,-6) {git is cool};
+                    \draw[green, ->] (D) -- (F);
+                    \node[circle, draw, minimum size=1cm] (G) at (4.5, -9) {merge};
+                    \draw[->] (E) -- (G);
+                    \draw[->] (F) -- (G);
+                \end{tikzpicture}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Commits}
+\begin{frame}
+    \frametitle{Commits}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}[<+->]
+                \item The \textbf{atomic unit} of git
+                \item You make the commits
+                \item A commit consists of 3 things
+                \item The state of the repo when that commit was made
+                \item What commit(s) came immediately before it
+                \item Metadata (timestamp, author, cryptographic hash)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}
+                \node[circle, draw, minimum size=5cm] (A) at (0,0) {Hello};
+            \end{tikzpicture}
         \end{column}
     \end{columns}
 \end{frame}
