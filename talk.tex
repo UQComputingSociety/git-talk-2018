@@ -601,6 +601,33 @@
 \end{frame}
 
 \subsection{Reverts}
+\begin{frame}
+    \frametitle{Reverts}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}[<+->]
+                \item From before, append to history the invert of a previous commit
+                \item Can revert any commit in your history
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \resizebox{!}{0.8\textheight}{
+                \begin{tikzpicture}
+                    \node[circle, draw, minimum size=1cm] (A) at (0,0) {Hello};
+                    \node[circle, draw, minimum size=1cm] (B) at (0,-2) {World};
+                    \draw[->] (A) -- (B);
+                    \node[circle, draw, minimum size=1cm] (C) at (0,-4) {Filler Text};
+                    \draw [->] (B) -- (C);
+                    \node[circle, draw, minimum size=1cm] (C2) at (0,-7) {\texttt{remove} Filler Text};
+                    \draw [->] (C) -- (C2);
+                \end{tikzpicture}
+            }
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
 \subsection{Branches and Merges}
 \subsection{Collaborative Work}
 
