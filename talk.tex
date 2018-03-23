@@ -4,6 +4,8 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes}
 
+\usepackage{multicol}
+
 \title{Git Gud}
 \author{Neil Ashford}
 \institute{UQ Computing Society}
@@ -13,7 +15,9 @@
 {
     \begin{frame}
         \frametitle{Outline}
-        \tableofcontents[currentsection]
+        \begin{multicols}{2}
+            \tableofcontents[currentsection]
+        \end{multicols}
     \end{frame}
 }
 
@@ -572,5 +576,16 @@
     \end{columns}
 
 \end{frame}
+
+\section{Real Life Git}
+
+\subsection{Commits}
+\begin{frame}
+    \frametitle{Commits}
+\end{frame}
+
+\subsection{Reverts}
+\subsection{Branches and Merges}
+\subsection{Collaborative Work}
 
 \end{document}
