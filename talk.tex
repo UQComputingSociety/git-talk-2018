@@ -629,6 +629,43 @@
 \end{frame}
 
 \subsection{Branches and Merges}
+\begin{frame}
+    \frametitle{Branches and Merges}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \resizebox{\textwidth}{!}{
+                \begin{tikzpicture}
+                    \node[circle, draw, minimum size=1cm] (A) at (0,0) {Hello};
+                    \node[circle, draw, minimum size=1cm] (B) at (0,-2) {World};
+                    \draw[->] (A) -- (B);
+                    \node[gray, dashed, circle, draw, minimum size=1cm] (C) at (0,-4) {Filler Text};
+                    \draw[gray, dashed, ->] (B) -- (C);
+                    \node[circle, draw, minimum size=1cm] (D) at (3,-4) {Lorem Ipsum};
+                    \draw[->] (B) -- (D);
+                    \node[gray, dashed, circle, draw, minimum size=1cm] (C2) at (0,-7) {More filler text};
+                    \draw[gray, dashed, ->] (C) -- (C2);
+                    \node[] (LC2) at (-3, -7) {Branch 2};
+                    \draw[->] (LC2) -- (C2);
+                    \node[] (LB) at (-3, -2) {Branch 3};
+                    \draw[->] (LB) -- (B);
+                    \node[circle, draw, minimum size=1cm] (D2) at (3,-10) {merge};
+
+                    \node[] (LD) at (6,-10) {\textbf{Branch 1}};
+                    \draw[->] (LD) -- (D2);
+
+                    \draw[->] (D) -- (D2);
+                    \draw[->] (C2) -- (D2);
+                \end{tikzpicture}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
 \subsection{Collaborative Work}
 
 \end{document}
